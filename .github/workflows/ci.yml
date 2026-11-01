@@ -17,7 +17,7 @@ jobs:
   # The pipeline is the org's (krizaka/.github docs/standards/ci-and-deploy.md): the changes gate, the caches, the timeouts and the
   # gate that always reports live there. This file says only what is this product's. Keep the pinned SHA current (Dependabot).
   ci:
-    uses: krizaka/.github/.github/workflows/node-ci.yml@ad28578bbef6c75bc441abfb1cf753164cd9c438 # v1.5.2
+    uses: krizaka/.github/.github/workflows/node-ci.yml@8b8ba2244f8348479fe6b85f245049da036195d2 # v1.5.2
     permissions:
       contents: read
     with:
