@@ -25,7 +25,7 @@
   "devDependencies": {
     "@ast-grep/cli": "0.51.0",
     "@krizaka/config": "^0.17.0",
-    "@krizaka/i18n": "^0.2.1",
+    "@krizaka/i18n": "^0.2.4",
     "prettier": "^3.9.10",
     "turbo": "^2.11.7",
     "vitest": "^5.0.5"
