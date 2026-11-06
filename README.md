@@ -1,6 +1,6 @@
-# template-next-app
+# krizaka-template-web
 
-[![Quality Gate](https://sonarcloud.io/api/project_badges/measure?project=krizaka_template-next-app&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=krizaka_template-next-app) [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=krizaka_template-next-app&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=krizaka_template-next-app) [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=krizaka_template-next-app&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=krizaka_template-next-app) [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=krizaka_template-next-app&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=krizaka_template-next-app) [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=krizaka_template-next-app&metric=coverage)](https://sonarcloud.io/summary/new_code?id=krizaka_template-next-app)
+[![Quality Gate](https://sonarcloud.io/api/project_badges/measure?project=krizaka_krizaka-template-web&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=krizaka_krizaka-template-web) [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=krizaka_krizaka-template-web&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=krizaka_krizaka-template-web) [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=krizaka_krizaka-template-web&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=krizaka_krizaka-template-web) [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=krizaka_krizaka-template-web&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=krizaka_krizaka-template-web) [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=krizaka_krizaka-template-web&metric=coverage)](https://sonarcloud.io/summary/new_code?id=krizaka_krizaka-template-web)
 
 The starting point of a Krizaka product site: a Next.js (App Router) pnpm/turbo monorepo with `apps/web`, wired to everything the family
 shares. **It only wires**: the pipeline, deploy tool and UI are the org's reusable workflows and `@krizaka/*` packages, so a fix there
@@ -8,7 +8,7 @@ reaches every product without touching the template.
 
 ## How to start a product from this
 
-1. On GitHub: **Use this template** → `krizaka/<product>` (private until the dev site is ready), or `gh repo create krizaka/<product> --template krizaka/template-next-app`.
+1. On GitHub: **Use this template** → `krizaka/<product>` (private until the dev site is ready), or `gh repo create krizaka/<product> --template krizaka/krizaka-template-web`.
 2. Clone, then `node scripts/init.mjs <product> "<Product>"` (lowercase slug, display name): it fills the double-underscore placeholders (slug, display name)
    everywhere, then deletes itself. Commit that as the first commit.
 3. `pnpm install && pnpm check` (lint with ast-grep ratchet and i18n check, typecheck, tests) and `pnpm build`.
@@ -19,18 +19,18 @@ reaches every product without touching the template.
 
 ## What is in it (and where the truth stays)
 
-| Piece | Here | Truth |
-| --- | --- | --- |
-| CI | `.github/workflows/ci.yml` (≈10 lines) | `krizaka/.github` `node-ci.yml` |
-| Dependabot auto-merge, scorecard | thin workflows | `krizaka/.github` |
-| Deploy | `.krizaka-deploy.json`, `deploy/digitalocean/app.yaml` (www rule, no route list) | `krizaka-deploy` in `krizaka/.github/deploy` |
-| SEO family | `scripts/check-seo-family.mjs` | identical copy, org contract |
-| Static rules | `rules/`, `rule-tests/`, `sgconfig.yml`, `scripts/sg-*.mjs`, `sg-ratchet.json` (all 0) | copies of the org's; keep identical |
-| Env | `apps/web/lib/env.ts` (zod, bounded contexts) + test | krizaka-com AGENTS §5 |
-| i18n | `lib/i18n.ts`, `messages/{en,fr}.json` | `@krizaka/i18n` |
-| UI | `@krizaka/ui`, `tailwind`, `tokens`, `fonts` | published packages |
-| Dev host / DO routes | `lib/dev-host.ts`, `proxy.ts` (+ tests) | ADR in `ci-and-deploy.md` |
-| dev-preview | `dev-preview.json` (every criterion a gap) | `docs/standards/dev-preview.md` |
+| Piece                            | Here                                                                                   | Truth                                        |
+| -------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------- |
+| CI                               | `.github/workflows/ci.yml` (≈10 lines)                                                 | `krizaka/.github` `node-ci.yml`              |
+| Dependabot auto-merge, scorecard | thin workflows                                                                         | `krizaka/.github`                            |
+| Deploy                           | `.krizaka-deploy.json`, `deploy/digitalocean/app.yaml` (www rule, no route list)       | `krizaka-deploy` in `krizaka/.github/deploy` |
+| SEO family                       | `scripts/check-seo-family.mjs`                                                         | identical copy, org contract                 |
+| Static rules                     | `rules/`, `rule-tests/`, `sgconfig.yml`, `scripts/sg-*.mjs`, `sg-ratchet.json` (all 0) | copies of the org's; keep identical          |
+| Env                              | `apps/web/lib/env.ts` (zod, bounded contexts) + test                                   | krizaka-com AGENTS §5                        |
+| i18n                             | `lib/i18n.ts`, `messages/{en,fr}.json`                                                 | `@krizaka/i18n`                              |
+| UI                               | `@krizaka/ui`, `tailwind`, `tokens`, `fonts`                                           | published packages                           |
+| Dev host / DO routes             | `lib/dev-host.ts`, `proxy.ts` (+ tests)                                                | ADR in `ci-and-deploy.md`                    |
+| dev-preview                      | `dev-preview.json` (every criterion a gap)                                             | `docs/standards/dev-preview.md`              |
 
 Not in it, on purpose: a database, auth, mail, maps, mobile — add them from the product that already does it.
 

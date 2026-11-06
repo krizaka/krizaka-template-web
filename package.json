@@ -2,7 +2,7 @@
   "name": "__PRODUCT__-monorepo",
   "version": "0.1.0",
   "private": true,
-  "description": "__Product__ — started from krizaka/template-next-app.",
+  "description": "__Product__ — started from krizaka/krizaka-template-web.",
   "packageManager": "pnpm@10.34.6",
   "scripts": {
     "dev": "turbo run dev --filter=@__PRODUCT__/web",
@@ -15,7 +15,7 @@
     "check": "pnpm run lint && pnpm run typecheck && pnpm run test",
     "init": "node scripts/init.mjs",
     "drift": "node scripts/check-template-drift.mjs",
-    "seo:check": "node scripts/check-seo-family.mjs --base http://localhost:3000 --host https://www.__PRODUCT__.com --types WebSite,SoftwareApplication",
+    "seo:live": "node scripts/check-seo-family.mjs --base http://localhost:3000 --host https://www.__PRODUCT__.com --types WebSite,SoftwareApplication",
     "lint:sg": "krizaka-sg-ratchet",
     "sg:ratchet:update": "krizaka-sg-ratchet --update",
     "sg:fix": "node scripts/sg-fix.mjs",
