@@ -15,7 +15,7 @@
     "check": "pnpm run lint && pnpm run typecheck && pnpm run test",
     "init": "node scripts/init.mjs",
     "drift": "node scripts/check-template-drift.mjs",
-    "seo:check": "node scripts/check-seo-family.mjs --base http://localhost:3000 --host https://www.__PRODUCT__.com --types WebSite,SoftwareApplication",
+    "seo:live": "node scripts/check-seo-family.mjs --base http://localhost:3000 --host https://www.__PRODUCT__.com --types WebSite,SoftwareApplication",
     "lint:sg": "krizaka-sg-ratchet",
     "sg:ratchet:update": "krizaka-sg-ratchet --update",
     "sg:fix": "node scripts/sg-fix.mjs",
