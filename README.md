@@ -19,18 +19,18 @@ reaches every product without touching the template.
 
 ## What is in it (and where the truth stays)
 
-| Piece | Here | Truth |
-| --- | --- | --- |
-| CI | `.github/workflows/ci.yml` (≈10 lines) | `krizaka/.github` `node-ci.yml` |
-| Dependabot auto-merge, scorecard | thin workflows | `krizaka/.github` |
-| Deploy | `.krizaka-deploy.json`, `deploy/digitalocean/app.yaml` (www rule, no route list) | `krizaka-deploy` in `krizaka/.github/deploy` |
-| SEO family | `scripts/check-seo-family.mjs` | identical copy, org contract |
-| Static rules | `rules/`, `rule-tests/`, `sgconfig.yml`, `scripts/sg-*.mjs`, `sg-ratchet.json` (all 0) | copies of the org's; keep identical |
-| Env | `apps/web/lib/env.ts` (zod, bounded contexts) + test | krizaka-com AGENTS §5 |
-| i18n | `lib/i18n.ts`, `messages/{en,fr}.json` | `@krizaka/i18n` |
-| UI | `@krizaka/ui`, `tailwind`, `tokens`, `fonts` | published packages |
-| Dev host / DO routes | `lib/dev-host.ts`, `proxy.ts` (+ tests) | ADR in `ci-and-deploy.md` |
-| dev-preview | `dev-preview.json` (every criterion a gap) | `docs/standards/dev-preview.md` |
+| Piece                            | Here                                                                                   | Truth                                        |
+| -------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------- |
+| CI                               | `.github/workflows/ci.yml` (≈10 lines)                                                 | `krizaka/.github` `node-ci.yml`              |
+| Dependabot auto-merge, scorecard | thin workflows                                                                         | `krizaka/.github`                            |
+| Deploy                           | `.krizaka-deploy.json`, `deploy/digitalocean/app.yaml` (www rule, no route list)       | `krizaka-deploy` in `krizaka/.github/deploy` |
+| SEO family                       | `scripts/check-seo-family.mjs`                                                         | identical copy, org contract                 |
+| Static rules                     | `rules/`, `rule-tests/`, `sgconfig.yml`, `scripts/sg-*.mjs`, `sg-ratchet.json` (all 0) | copies of the org's; keep identical          |
+| Env                              | `apps/web/lib/env.ts` (zod, bounded contexts) + test                                   | krizaka-com AGENTS §5                        |
+| i18n                             | `lib/i18n.ts`, `messages/{en,fr}.json`                                                 | `@krizaka/i18n`                              |
+| UI                               | `@krizaka/ui`, `tailwind`, `tokens`, `fonts`                                           | published packages                           |
+| Dev host / DO routes             | `lib/dev-host.ts`, `proxy.ts` (+ tests)                                                | ADR in `ci-and-deploy.md`                    |
+| dev-preview                      | `dev-preview.json` (every criterion a gap)                                             | `docs/standards/dev-preview.md`              |
 
 Not in it, on purpose: a database, auth, mail, maps, mobile — add them from the product that already does it.
 

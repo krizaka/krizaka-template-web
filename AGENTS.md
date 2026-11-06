@@ -1,4 +1,4 @@
-# __Product__ — agent contract
+# **Product** — agent contract
 
 Started from `krizaka/krizaka-template-web`. The governance of the family is **krizaka-com's AGENTS.md** (theming with `var(--kz-*)`,
 every string in `messages/*.json`, `@krizaka/ui` blocks, tests with every change, definition of done) — read it, do not copy it here.
