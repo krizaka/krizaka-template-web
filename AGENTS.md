@@ -1,6 +1,6 @@
 # __Product__ — agent contract
 
-Started from `krizaka/template-next-app`. The governance of the family is **krizaka-com's AGENTS.md** (theming with `var(--kz-*)`,
+Started from `krizaka/krizaka-template-web`. The governance of the family is **krizaka-com's AGENTS.md** (theming with `var(--kz-*)`,
 every string in `messages/*.json`, `@krizaka/ui` blocks, tests with every change, definition of done) — read it, do not copy it here.
 
 - Shared things stay shared: the pipeline is `krizaka/.github` reusable workflows (`ci.yml` only wires it), deploys go through
