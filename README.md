@@ -40,6 +40,7 @@ The files marked « copy » are the only duplication left; `scripts/check-templa
 (`node scripts/check-template-drift.mjs`) and the template's CI runs it weekly. Moving them into `@krizaka/config` is the end state.
 
 <!-- krizaka:workflows:start -->
+
 ## Workflows
 
 What runs in the Actions tab of this repository.
@@ -50,4 +51,5 @@ What runs in the Actions tab of this repository.
 - **Merge resolution** (`merge-resolution.yml`): Fails a PR that drops what main added without a deletion-explained line. Runs on every pull request.
 - **Scorecard** (`scorecard.yml`): OpenSSF Scorecard of the repository. Runs when branch rules change, on a schedule, on demand.
 - **Security scan** (`security.yml`): Secret scan (gitleaks) and workflow scan (zizmor); both are required checks. Runs on every pull request, in the merge queue, on push.
+
 <!-- krizaka:workflows:end -->
